@@ -48,10 +48,19 @@ function M.load()
     Comment                       = { f = P.g12 },
     Error                         = { f = P.hot, b = P.cold },
     MatchParen                    = { f = P.hot, b = P.cold },
+    Added                         = { f = P.green },
+    Changed                       = { f = P.blue },
+    Removed                       = { f = P.hot },
     -- tui
+    QuickFixLine                  = { f = P.hot },
     LineNr                        = { f = P.g14 },
     CursorLine                    = { b = P.g04 },
     CursorLineNr                  = { f = P.g22, b = P.g04 },
+    StatusLine                    = { f = P.black, b = P.hot },
+    StatusLineNC                  = { f = P.hot, b = P.cold },
+    TabLine                       = { f = P.hot, b = P.cold },
+    TabLineFill                   = { f = P.black, b = P.black },
+    TabLineSel                    = { f = P.black, b = P.hot },
     VertSplit                     = { f = P.hot },
     WinSeparator                  = { f = P.hot },
     ColorColumn                   = { b = P.g04 },
@@ -66,14 +75,12 @@ function M.load()
     EndOfBuffer                   = { f = P.hot },
     ErrorMsg                      = { f = P.hot },
     WarningMsg                    = { f = P.yellow },
-    StatusLine                    = { f = P.black, b = P.hot  },
-    StatusLineNC                  = { f = P.hot, b = P.cold },
     Directory                     = { f = P.hot },
     ModeMsg                       = { f = P.hot },
     MoreMsg                       = { f = P.hot },
     Question                      = { f = P.hot },
-    NormalFloat                   = { f = P.hot, b = P.cold },
-    FloatBorder                   = { f = P.g22 },
+    FloatBorder                   = { f = P.hot },
+    FloatTitle                    = { f = P.hot },
     -- diagnostics
     DiagnosticError               = { f = P.hot },
     DiagnosticWarn                = { f = P.yellow },
@@ -89,7 +96,10 @@ function M.load()
     DiagnosticUnderlineInfo       = { f = P.g22, underline = true },
     DiagnosticUnderlineHint       = { link = "DiagnosticUnderlineInfo" },
     DiagnosticUnderlineOk         = { link = "DiagnosticUnderlineInfo" },
+    -- Telescope
+    TelescopeBorder               = { link = "FloatBorder" },
     -- lsp
+    LspInfoBorder                 = { link = "FloatBorder" },
     ["@variable"]                 = { f = P.g22 },
     -- lua
     ["@constructor.lua"]          = { f = P.g19 },
@@ -167,10 +177,12 @@ M.pallete = {
   g24      = 255,
   white    = 15,
 
-  yellow   = 226,
-  cyan     = 51,
   hot      = 197,
   cold     = 52,
+  red      = 197,
+  green    = 46,
+  blue     = 33,
+  yellow   = 226,
 }
 
 return M
